@@ -928,7 +928,7 @@ footer {
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
 .login-kepala {
-  background: var(--merah);
+  background: var(--merah); /* Otomatis menggunakan Hijau Persia */
   padding: 28px 28px 22px;
   text-align: center;
   border-bottom: 4px solid var(--merah-tua);
@@ -967,7 +967,7 @@ footer {
 .login-input:focus { border-color: var(--biru); background: #fff; }
 .tombol-login {
   width: 100%;
-  background: var(--merah);
+  background: var(--merah); /* Otomatis menggunakan Hijau Persia */
   color: white;
   border: none;
   border-radius: 5px;
@@ -1010,7 +1010,8 @@ footer {
 <div id="gerbangLogin">
   <div class="kotak-login">
     <div class="login-kepala">
-      <img id="loginLogo" src="" alt="Granostic">
+      <!-- Menggunakan link Logo Baru dari Google Drive Anda secara permanen -->
+      <img id="loginLogo" src="https://drive.google.com/uc?export=download&id=1Bo0fEb-lIgrCfHMjO8G6a4rd0L9rn5CC" alt="Granostic">
       <h1>Portal Kebijakan Internal</h1>
       <p>Akses khusus karyawan yang berwenang (SPV / Manager)</p>
     </div>
@@ -1043,7 +1044,8 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="logo-area">
-    <img src="data:image/png;base64,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" alt="Granostic" style="height:48px; width:auto; display:block;">
+    <!-- Menggunakan link Logo Baru dari Google Drive Anda secara permanen -->
+    <img src="https://drive.google.com/uc?export=download&id=1Bo0fEb-lIgrCfHMjO8G6a4rd0L9rn5CC" alt="Granostic" style="height:48px; width:auto; display:block;">
   </div>
   <div class="header-divider"></div>
   <div>
@@ -1327,27 +1329,6 @@ footer {
    5. Tempel URL tersebut di bawah ini (ganti teks GANTI_DENGAN_URL_CSV_ANDA)
    ══════════════════════════════════════════════════════════════════ */
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRMLwyWJZ1ZdkPDxp15lXfOKiQYqYcj3C9bQbzLPo1rvpnHu231QHVo9nj1NEQQg24yc9eYOmAhfTfp/pub?gid=0&single=true&output=csv";
-// Contoh URL yang benar:
-// "https://docs.google.com/spreadsheets/d/e/2PACX-1vRMLwyWJZ1ZdkPDxp15lXfOKiQYqYcj3C9bQbzLPo1rvpnHu231QHVo9nj1NEQQg24yc9eYOmAhfTfp/pub?gid=0&single=true&output=csv"
-
-/* ══════════════════════════════════════════════════════════════════
-   STRUKTUR KOLOM GOOGLE SHEETS (urutan wajib sama persis):
-   Kolom A : id          → nomor urut (1, 2, 3, ...)
-   Kolom B : nomor       → nomor peraturan  (SK/HRD/001/2026)
-   Kolom C : jenis       → SK / SOP / SE / PKB / POL
-   Kolom D : dept        → HRD / Keuangan / Operasional / dst
-   Kolom E : judul       → judul lengkap peraturan
-   Kolom F : abstrak     → ringkasan isi peraturan
-   Kolom G : tanggal     → format YYYY-MM-DD  (2026-03-15)
-   Kolom H : berlaku_sejak → teks bebas  (1 April 2026)
-   Kolom I : ditetapkan_oleh → nama/jabatan penandatangan
-   Kolom J : halaman     → jumlah halaman  (12 hlm)
-   Kolom K : status      → Berlaku / Tidak Berlaku / Dalam Review
-   Kolom L : pdf_url     → link Google Drive (format: https://drive.google.com/uc?export=download&id=ID_FILE)
-   Kolom M : tags        → kata kunci, pisahkan dengan titik koma (SDM;Kebijakan;HRD)
-   Kolom N : dicabut     → nomor peraturan yang mencabut ini (kosongkan jika tidak ada)
-   Kolom O : mencabut    → nomor peraturan yang dicabut oleh ini (kosongkan jika tidak ada)
-   ══════════════════════════════════════════════════════════════════ */
 
 /* ── DATA & STATE ── */
 let DATA = [];
@@ -1380,7 +1361,6 @@ function tampil_error(pesan) {
 }
 
 function parse_csv(teks) {
-  // Pisahkan baris, tangani baris yang berisi newline dalam tanda kutip
   const baris = [];
   let barisSkrg = '';
   let dalamKutip = false;
@@ -1399,7 +1379,6 @@ function parse_csv(teks) {
 
   if (baris.length < 2) return [];
 
-  // Fungsi pecah satu baris CSV dengan benar
   function pecah_baris(b) {
     const hasil = [];
     let sel = '';
@@ -1430,26 +1409,21 @@ function parse_csv(teks) {
       header.forEach((h, i) => {
         obj[h.trim()] = (kolom[i] || '').trim();
       });
-      // Konversi tags: "SDM;Kebijakan;HRD" → ["SDM","Kebijakan","HRD"]
       obj.tags = obj.tags
         ? obj.tags.split(';').map(t => t.trim()).filter(Boolean)
         : [];
-      // Konversi null string
       if (obj.dicabut === '' || obj.dicabut === '-') obj.dicabut = null;
       if (obj.mencabut === '' || obj.mencabut === '-') obj.mencabut = null;
-      // Pastikan id bertipe angka
       obj.id = parseInt(obj.id) || (idx + 1);
       return obj;
     });
 }
 
 async function muat_data() {
-  // Jika URL belum diisi, tampilkan data contoh
   if (!SHEET_CSV_URL || SHEET_CSV_URL === 'GANTI_DENGAN_URL_CSV_ANDA') {
     DATA = DATA_CONTOH;
     render_sidebar();
     render_daftar();
-    // Tampilkan banner pengingat konfigurasi
     document.getElementById('bannerKonfigurasi').style.display = 'flex';
     return;
   }
@@ -1475,7 +1449,6 @@ async function muat_data() {
        • Koneksi internet terputus<br><br>
        <em>Menampilkan data contoh sebagai gantinya...</em>`
     );
-    // Fallback ke data contoh
     setTimeout(() => {
       DATA = DATA_CONTOH;
       render_sidebar();
@@ -1484,10 +1457,6 @@ async function muat_data() {
   }
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   DATA CONTOH — Dipakai saat URL Sheets belum dikonfigurasi
-   atau saat koneksi gagal. HR tidak perlu mengubah bagian ini.
-   ══════════════════════════════════════════════════════════════════ */
 const DATA_CONTOH = [
   { id:1, nomor:"SK/HRD/001/2026", jenis:"SK", dept:"HRD",
     judul:"Kebijakan Kerja Hybrid dan Work From Home Tahun 2026",
@@ -1545,7 +1514,7 @@ const DATA_CONTOH = [
     tags:["Cuti","Kalender Kerja","SDM"], dicabut:null, mencabut:null },
   { id:10, nomor:"POL/HRD/001/2026", jenis:"POL", dept:"HRD",
     judul:"Kebijakan Anti-Diskriminasi dan Kesetaraan di Tempat Kerja",
-    abstrak:"Kebijakan yang menegaskan komitmen perusahaan terhadap lingkungan kerja yang adil dan bebas diskriminasi. Mencakup larangan segala bentuk diskriminasi, prosedur pelaporan via whistleblowing, mekanisme investigasi internal yang rahasia, sanksi bagi pelanggar, dan program edukasi budaya inklusif.",
+    abstrak:"Kebijakan yang menegaskan komitmen perusahaan terhadap lingkungan kerja yang adil and bebas diskriminasi. Mencakup larangan segala bentuk diskriminasi, prosedur pelaporan via whistleblowing, mekanisme investigasi internal yang rahasia, sanksi bagi pelanggar, dan program edukasi budaya inklusif.",
     tanggal:"2026-06-01", berlaku_sejak:"1 Juni 2026", ditetapkan_oleh:"Direktur Utama",
     halaman:"10 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Ketenagakerjaan","Etika","Kebijakan Perusahaan"], dicabut:null, mencabut:null },
@@ -1607,7 +1576,6 @@ function render_daftar() {
   const filtered = data_diurut(data_terfilter());
   document.getElementById('jmlHasil').textContent = filtered.length;
 
-  // paginasi
   const total_hal = Math.ceil(filtered.length / PER_HALAMAN) || 1;
   if (halamanAktif > total_hal) halamanAktif = 1;
   const mulai = (halamanAktif - 1) * PER_HALAMAN;
@@ -1662,7 +1630,6 @@ function render_daftar() {
     </div>
   `).join('');
 
-  // render paginasi
   render_paginasi(total_hal);
 }
 
@@ -1725,13 +1692,11 @@ function filter_kategori(el, jenis) {
 
 /* ── SIDEBAR JENIS & STATISTIK ── */
 function render_sidebar() {
-  // statistik
   document.getElementById('stTotal').textContent   = DATA.length;
   document.getElementById('stBerlaku').textContent  = DATA.filter(r => r.status === 'Berlaku').length;
   document.getElementById('stNonAktif').textContent = DATA.filter(r => r.status === 'Tidak Berlaku').length;
   document.getElementById('stReview').textContent   = DATA.filter(r => r.status === 'Dalam Review').length;
 
-  // jenis
   const hitungan = {};
   DATA.forEach(r => { hitungan[r.jenis] = (hitungan[r.jenis] || 0) + 1; });
   document.getElementById('daftarJenis').innerHTML = Object.entries(hitungan)
@@ -1753,11 +1718,9 @@ function buka_detail(id) {
   document.getElementById('halamanDetail').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // breadcrumb
   document.getElementById('bcDetailJenis').textContent = r.jenis;
   document.getElementById('bcDetailJudul').textContent = r.nomor;
 
-  // kepala
   const bj = document.getElementById('dBadgeJenis');
   bj.textContent = r.jenis;
   bj.className = `badge-jenis ${r.jenis}`;
@@ -1766,7 +1729,6 @@ function buka_detail(id) {
   document.getElementById('dBadgeBaris').innerHTML =
     badge_status(r.status) + `&nbsp; <span style="font-size:12px;color:rgba(255,255,255,0.65);">📅 Ditetapkan ${tgl_format(r.tanggal)}</span>`;
 
-  // meta grid
   document.getElementById('dMeta').innerHTML = `
     <div class="meta-sel"><div class="meta-sel-kunci">Nomor</div><div class="meta-sel-nilai">${r.nomor}</div></div>
     <div class="meta-sel"><div class="meta-sel-kunci">Jenis</div><div class="meta-sel-nilai">${r.jenis}</div></div>
@@ -1778,10 +1740,8 @@ function buka_detail(id) {
     <div class="meta-sel"><div class="meta-sel-kunci">Status</div><div class="meta-sel-nilai">${r.status}</div></div>
   `;
 
-  // abstrak
   document.getElementById('dAbstrak').textContent = r.abstrak;
 
-  // tabel status
   let statusRows = `<tr><td>Status Berlaku</td><td>${badge_status(r.status)}</td></tr>`;
   if (r.dicabut)   statusRows += `<tr><td>Dicabut dengan</td><td><a href="#" onclick="buka_detail_by_nomor('${r.dicabut}')">${r.dicabut}</a></td></tr>`;
   if (r.mencabut)  statusRows += `<tr><td>Mencabut</td><td>${r.mencabut}</td></tr>`;
@@ -1789,10 +1749,8 @@ function buka_detail(id) {
     statusRows += `<tr><td>Catatan</td><td>Peraturan ini berdiri sendiri, tidak mencabut maupun dicabut oleh peraturan lain.</td></tr>`;
   document.getElementById('dStatusBody').innerHTML = statusRows;
 
-  // pdf
   document.getElementById('dPdfNama').textContent = r.nomor.replace(/\//g,'-') + '.pdf';
 
-  // terkait
   const terkait = DATA.filter(x => x.dept === r.dept && x.id !== r.id).slice(0, 4);
   const seksiT = document.getElementById('seksiTerkait');
   const listT  = document.getElementById('dTerkait');
@@ -1819,14 +1777,11 @@ function buka_detail_by_nomor(nomor) {
 function ke_daftar() {
   document.getElementById('halamanDaftar').style.display = 'block';
   document.getElementById('halamanDetail').style.display = 'none';
-  render_daftar(); // gambar ulang daftar sesuai filter yang aktif saat ini
+  render_daftar();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function url_preview_drive(url) {
-  // Konversi link Google Drive ke URL preview yang bisa di-embed di iframe
-  // Format download: https://drive.google.com/uc?export=download&id=FILE_ID
-  // Format preview:  https://drive.google.com/file/d/FILE_ID/preview
   if (!url || url === '#') return null;
   const matchUc = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if (matchUc) {
@@ -1836,13 +1791,11 @@ function url_preview_drive(url) {
   if (matchFile) {
     return `https://drive.google.com/file/d/${matchFile[1]}/preview`;
   }
-  // Bukan Google Drive — coba embed langsung (berlaku untuk URL PDF biasa)
   return url;
 }
 
 function url_unduh_drive(url) {
   if (!url || url === '#') return null;
-  // Pastikan pakai format download
   const matchUc = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if (matchUc) return `https://drive.google.com/uc?export=download&id=${matchUc[1]}`;
   const matchFile = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
@@ -1883,7 +1836,6 @@ function tampil_pdf_modal() {
 function tutup_pdf_modal() {
   document.getElementById('pdfModalOverlay').classList.remove('buka');
   document.body.style.overflow = '';
-  // Hentikan iframe agar tidak terus load di background
   document.getElementById('pdfModalFrame').innerHTML = '';
 }
 
@@ -1910,18 +1862,16 @@ function unduh_pdf() {
     a.click();
     document.body.removeChild(a);
   } else {
-    alert('IMPLEMENTASI:\nGanti nilai "pdf_url" pada data dengan link Google Drive Anda.\n\nContoh:\n"pdf_url": "https://drive.google.com/uc?export=download&id=ID_FILE"');
+    alert('URL PDF belum dikonfigurasi di Google Sheets.');
   }
 }
 
 function ambil_pdf(url, nomor) {
-  // Tombol PDF di kartu daftar — langsung buka di tab baru (preview)
   const previewUrl = url_preview_drive(url);
   if (previewUrl) window.open(previewUrl, '_blank');
   else alert(`Ganti "pdf_url" untuk ${nomor} dengan link Google Drive.`);
 }
 
-// Tutup modal dengan tombol Escape
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') tutup_pdf_modal();
 });
@@ -1929,8 +1879,6 @@ document.addEventListener('keydown', e => {
 /* ══════════════════════════════════════════════════════════
    LOGIN — Google Apps Script sebagai penjaga pintu
 ══════════════════════════════════════════════════════════ */
-
-// GANTI dengan URL Web App Google Apps Script Anda setelah di-deploy
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwySAZPy9fJiICx7xB9MlhSNRF8BViFVE1RU3keZK6sD77UCOikDQ0QcZlni4Jci6ja/exec";
 
 function tampil_pesan_login(teks, jenis) {
@@ -1960,7 +1908,7 @@ async function lakukan_login() {
   try {
     const res = await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // hindari CORS preflight
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ username, password })
     });
     const hasil = await res.json();
@@ -1983,7 +1931,6 @@ async function lakukan_login() {
 function buka_aplikasi(nama, role) {
   document.getElementById('gerbangLogin').style.display = 'none';
   document.getElementById('appKonten').style.display = 'block';
-  // Tampilkan nama user yang login di strip atas
   const stripKanan = document.querySelector('.strip-atas span:last-child');
   if (stripKanan) {
     stripKanan.innerHTML = `👤 ${nama} (${role}) &nbsp;|&nbsp; <a href="#" onclick="lakukan_logout(); return false;" style="text-decoration:underline;">Keluar</a>`;
@@ -1996,18 +1943,12 @@ function lakukan_logout() {
   location.reload();
 }
 
-// Tekan Enter di kolom password untuk langsung login
 document.getElementById('inputPassword').addEventListener('keydown', e => {
   if (e.key === 'Enter') lakukan_login();
 });
 
 /* ── INIT ── */
 (function initGerbang() {
-  // Pakai logo yang sama dengan yang sudah ada di header aplikasi
-  const logoUtama = document.querySelector('.logo-area img');
-  if (logoUtama) document.getElementById('loginLogo').src = logoUtama.src;
-
-  // Cek apakah user masih dalam sesi login (session ini / tab ini)
   const sesi = sessionStorage.getItem('sdip_auth');
   if (sesi) {
     try {
