@@ -367,7 +367,6 @@ nav.nav-utama {
 .status-nonaktif   { background: #fee2e2; color: #991b1b; }
 .status-review     { background: var(--kuning-bg); color: var(--kuning); }
 
-/* Tag abstrak persis BPK */
 .kartu-tags {
   padding: 0 18px 10px;
   display: flex;
@@ -386,7 +385,6 @@ nav.nav-utama {
 }
 .tag-item:hover { background: var(--biru-muda); color: var(--biru); border-color: var(--biru); }
 
-/* Abstrak collapsible seperti BPK */
 .kartu-abstrak-wrap {
   border-top: 1px solid var(--abu-muda);
   margin-top: 4px;
@@ -1000,10 +998,9 @@ footer {
 <div id="gerbangLogin">
   <div class="kotak-login">
     <div class="login-kepala">
-      <!-- TANDA KUNING: Menggunakan Base64 Data URI dari Logo GRANOSTIC Baru-White.png secara langsung agar pasti muncul -->
       <img id="loginLogo" src="https://lh3.googleusercontent.com/d/1Bo0fEb-lIgrCfHMjO8G6a4rd0L9rn5CC" alt="Granostic">
       <h1>Portal Kebijakan Internal</h1>
-      <p>Akses khusus karyawan berwenang (SPV / Manager / BoD)</p>
+      <p>Akses khusus karyawan yang berwenang (BoD / Manager / Spv)</p>
     </div>
     <div class="login-badan">
       <div class="login-pesan" id="loginPesan"></div>
@@ -1017,7 +1014,7 @@ footer {
       </div>
       <button class="tombol-login" id="tombolLogin" onclick="lakukan_login()">Masuk</button>
       <div class="login-footer">
-        Lupa password? Admin Portal (ext. 301)<br>
+        Lupa password? Hubungi HRGA&IT Department (ext. 301)<br>
         untuk permintaan reset akses.
       </div>
     </div>
@@ -1034,8 +1031,7 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="logo-area">
-    <!-- TANDA MERAH: Menggunakan Base64 Data URI dari Logo GRANOSTIC Baru-Colour.png secara langsung agar pasti muncul -->
-    <img src=" https://lh3.googleusercontent.com/d/13fYVo8GG4_R75m5fcqNieWpTnePyB0cb" alt="Granostic" style="height:48px; width:auto; display:block;">
+    <img src="https://lh3.googleusercontent.com/d/13fYVo8GG4_R75m5fcqNieWpTnePyB0cb" alt="Granostic" style="height:48px; width:auto; display:block;">
   </div>
   <div class="header-divider"></div>
   <div>
@@ -1382,7 +1378,7 @@ function parse_csv(teks) {
     return hasil;
   }
 
-  const header = pecah_baris(b[0]);
+  const header = pecah_baris(baris[0]); // PERBAIKAN: b[0] diubah ke baris[0] agar terbaca oleh JavaScript
 
   return baris.slice(1)
     .filter(b => b.trim())
@@ -1467,7 +1463,7 @@ const DATA_CONTOH = [
     tags:["Aset Perusahaan","Fasilitas","Tata Kelola"], dicabut:null, mencabut:null },
   { id:5, nomor:"SOP/TI/001/2025", jenis:"SOP", dept:"Teknologi Informasi",
     judul:"Prosedur Keamanan Informasi dan Keamanan Siber Perusahaan",
-    abstrak:"SOP pengelolaan keamanan data dan infrastruktur IT perusahaan yang mencakup kebijakan password, penggunaan VPN, manajemen hak akses berdasarkan role, penanganan insiden siber, prosedur backup data, serta program pelatihan keamanan informasi tahunan untuk seluruh karyawan.",
+    abstrak:"SOP pengelolaan keamanan data and infrastruktur IT perusahaan yang mencakup kebijakan password, penggunaan VPN, manajemen hak akses berdasarkan role, penanganan insiden siber, prosedur backup data, serta program pelatihan keamanan informasi tahunan untuk seluruh karyawan.",
     tanggal:"2025-11-20", berlaku_sejak:"1 Desember 2025", ditetapkan_oleh:"Manajer Teknologi Informasi",
     halaman:"32 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Keamanan Siber","IT","Prosedur"], dicabut:null, mencabut:null },
@@ -1723,7 +1719,7 @@ function buka_detail(id) {
     <div class="meta-sel"><div class="meta-sel-kunci">Status</div><div class="meta-sel-nilai">${r.status}</div></div>
   `;
 
-  document.getElementById('dAbstrak').textContent = r.abstrak;
+  document.getElementById('dAbstrak').textContent = r.abstract || r.abstrak;
 
   let statusRows = `<tr><td>Status Berlaku</td><td>${badge_status(r.status)}</td></tr>`;
   if (r.dicabut)   statusRows += `<tr><td>Dicabut dengan</td><td><a href="#" onclick="buka_detail_by_nomor('${r.dicabut}')">${r.dicabut}</a></td></tr>`;
