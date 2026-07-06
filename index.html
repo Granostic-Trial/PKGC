@@ -23,8 +23,8 @@ a { text-decoration: none; color: inherit; }
 /* ── WARNA TEMA ───────────────────────────────────────────── */
 /* Tema sporty . modern . clean -- aksen hijau persia + navy gelap */
 :root {
-  --merah:        #00A693; /* Diubah menjadi Hijau Persia */
-  --merah-tua:    #008576; /* Disesuaikan untuk efek hover */
+  --merah:        #00A693; /* Hijau Persia */
+  --merah-tua:    #008576; /* Hover Hijau Persia */
   --merah-muda:   #FFE4DA;
   --biru-tua:     #131B33;
   --biru:         #2F6FED;
@@ -295,7 +295,7 @@ nav.nav-utama {
   outline: none;
 }
 
-/* KARTU PERATURAN — persis seperti BPK: baris judul + badge + abstrak + tombol */
+/* KARTU PERATURAN */
 #daftarPeraturan {}
 
 .kartu-peraturan {
@@ -368,7 +368,6 @@ nav.nav-utama {
 .status-nonaktif   { background: #fee2e2; color: #991b1b; }
 .status-review     { background: var(--kuning-bg); color: var(--kuning); }
 
-/* Tag abstrak persis BPK */
 .kartu-tags {
   padding: 0 18px 10px;
   display: flex;
@@ -387,7 +386,6 @@ nav.nav-utama {
 }
 .tag-item:hover { background: var(--biru-muda); color: var(--biru); border-color: var(--biru); }
 
-/* Abstrak collapsible seperti BPK */
 .kartu-abstrak-wrap {
   border-top: 1px solid var(--abu-muda);
   margin-top: 4px;
@@ -420,7 +418,6 @@ nav.nav-utama {
 .kartu-abstrak-isi mark { background: #fef08a; border-radius: 2px; padding: 0 2px; }
 .kartu-abstrak-isi.tampil { display: block; }
 
-/* Footer kartu: tanggal + unduh */
 .kartu-footer {
   padding: 9px 18px;
   background: var(--abu-bg);
@@ -468,7 +465,6 @@ nav.nav-utama {
 .tombol-detail:hover { background: var(--biru); color: white; }
 .tombol-aksi { display: flex; gap: 6px; }
 
-/* paginasi */
 .paginasi {
   margin-top: 20px;
   display: flex;
@@ -492,7 +488,6 @@ nav.nav-utama {
 .pg.nonaktif { color: var(--abu); cursor: default; }
 .pg.nonaktif:hover { background: var(--putih); border-color: var(--border); color: var(--abu); }
 
-/* KOSONG */
 .kosong {
   background: var(--putih);
   border: 1px solid var(--border);
@@ -506,7 +501,7 @@ nav.nav-utama {
 .kosong p { font-size: 13px; }
 
 /* ══════════════════════════════════════════════════════════
-   HALAMAN DETAIL — referensi: BPK /Details/...
+   HALAMAN DETAIL
 ══════════════════════════════════════════════════════════ */
 #halamanDetail { display: none; }
 
@@ -529,7 +524,6 @@ nav.nav-utama {
 }
 .tombol-kembali:hover { background: var(--biru); color: white; }
 
-/* judul area */
 .detail-kepala {
   background: var(--putih);
   border: 1px solid var(--border);
@@ -586,7 +580,6 @@ nav.nav-utama {
 .meta-sel-kunci { font-size: 10.5px; font-weight: 700; color: var(--abu); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
 .meta-sel-nilai { font-size: 13px; font-weight: 600; color: var(--teks); }
 
-/* body detail */
 .detail-body {
   background: var(--putih);
   border: 1px solid var(--border);
@@ -618,7 +611,6 @@ nav.nav-utama {
   margin-bottom: 24px;
 }
 
-/* tabel status */
 .tabel-status {
   width: 100%;
   border-collapse: collapse;
@@ -642,7 +634,6 @@ nav.nav-utama {
 .tabel-status tr:last-child td { border-bottom: none; }
 .tabel-status a { color: var(--biru); text-decoration: underline; }
 
-/* unduh dokumen */
 .kotak-unduh {
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -928,7 +919,7 @@ footer {
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
 .login-kepala {
-  background: var(--merah); /* Otomatis menggunakan Hijau Persia */
+  background: var(--merah);
   padding: 28px 28px 22px;
   text-align: center;
   border-bottom: 4px solid var(--merah-tua);
@@ -967,7 +958,7 @@ footer {
 .login-input:focus { border-color: var(--biru); background: #fff; }
 .tombol-login {
   width: 100%;
-  background: var(--merah); /* Otomatis menggunakan Hijau Persia */
+  background: var(--merah);
   color: white;
   border: none;
   border-radius: 5px;
@@ -1010,7 +1001,7 @@ footer {
 <div id="gerbangLogin">
   <div class="kotak-login">
     <div class="login-kepala">
-      <!-- Menggunakan link Logo Baru dari Google Drive Anda secara permanen -->
+      <!-- TANDA KUNING: Menggunakan link Logo Putih (Logo GRANOSTIC Baru-White.png) agar kontras di atas warna hijau -->
       <img id="loginLogo" src="https://drive.google.com/uc?export=download&id=1Bo0fEb-lIgrCfHMjO8G6a4rd0L9rn5CC" alt="Granostic">
       <h1>Portal Kebijakan Internal</h1>
       <p>Akses khusus karyawan yang berwenang (SPV / Manager)</p>
@@ -1044,8 +1035,8 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="logo-area">
-    <!-- Menggunakan link Logo Baru dari Google Drive Anda secara permanen -->
-    <img src="https://drive.google.com/uc?export=download&id=1Bo0fEb-lIgrCfHMjO8G6a4rd0L9rn5CC" alt="Granostic" style="height:48px; width:auto; display:block;">
+    <!-- TANDA MERAH: Menggunakan link Logo Hijau (Logo GRANOSTIC Baru-Colour.png) agar kontras di atas baris putih -->
+    <img src="https://drive.google.com/uc?export=download&id=13fYVo8GG4_R75m5fcqNieWpTnePyB0cb" alt="Granostic" style="height:48px; width:auto; display:block;">
   </div>
   <div class="header-divider"></div>
   <div>
@@ -1320,13 +1311,6 @@ footer {
 <script>
 /* ══════════════════════════════════════════════════════════════════
    KONFIGURASI — HANYA BAGIAN INI YANG PERLU DIUBAH OLEH HR
-   ══════════════════════════════════════════════════════════════════
-   Langkah:
-   1. Buka Google Sheets Anda
-   2. Klik File → Share → Publish to web
-   3. Pilih Sheet yang berisi data → format "Comma-separated values (.csv)"
-   4. Klik Publish → salin URL yang muncul
-   5. Tempel URL tersebut di bawah ini (ganti teks GANTI_DENGAN_URL_CSV_ANDA)
    ══════════════════════════════════════════════════════════════════ */
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRMLwyWJZ1ZdkPDxp15lXfOKiQYqYcj3C9bQbzLPo1rvpnHu231QHVo9nj1NEQQg24yc9eYOmAhfTfp/pub?gid=0&single=true&output=csv";
 
