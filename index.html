@@ -1017,7 +1017,7 @@ footer {
       </div>
       <button class="tombol-login" id="tombolLogin" onclick="lakukan_login()">Masuk</button>
       <div class="login-footer">
-        Lupa password? Hubungi HRGA-IT Department (ext. 301)<br>
+        Lupa password? Admin Portal (ext. 301)<br>
         untuk permintaan reset akses.
       </div>
     </div>
@@ -1028,7 +1028,7 @@ footer {
 <!-- STRIP ATAS -->
 <div class="strip-atas">
   <span>🏢 Granostic &nbsp;|&nbsp; Portal Kebijakan Internal Granostic Center</span>
-  <span>⚙️ Dikelola: HRGA-IT Department &nbsp;|&nbsp; Kontak: ext. 301</span>
+  <span>⚙️ Dikelola: HRGA&IT Department &nbsp;|&nbsp; Kontak: ext. 301</span>
 </div>
 
 <!-- HEADER -->
@@ -1040,7 +1040,7 @@ footer {
   <div class="header-divider"></div>
   <div>
     <div class="nama-perusahaan">Granostic</div>
-    <div class="nama-dept">HRGA-IT Department</div>
+    <div class="nama-dept">HRGA&IT Department</div>
   </div>
   <div class="search-header">
     <input type="text" id="inputCari" placeholder="Cari nomor, judul, atau kata kunci..." oninput="lakukan_cari(this.value)" />
@@ -1087,7 +1087,7 @@ footer {
             <div class="form-label">Departemen Penerbit</div>
             <select class="form-select" id="filterDept" onchange="terapkan_filter()">
               <option value="">— Semua Departemen —</option>
-              <option value="HRD">HRGA-IT</option>
+              <option value="HRD">HRGA&IT</option>
               <option value="Finance &amp; Accounting">Finacc</option>
               <option value="Clinic">Clinic</option>
               <option value="Laboratory">Laboratory</option>
@@ -1265,7 +1265,7 @@ footer {
       <ul>
         <li><a href="#">Google Drive Perusahaan</a></li>
         <li><a href="#">Sistem HR Internal</a></li>
-        <li><a href="#">Email HRGA-IT Dept.</a></li>
+        <li><a href="#">Email HRGA&IT Dept.</a></li>
         <li><a href="#">Panduan Penggunaan</a></li>
       </ul>
     </div>
@@ -1279,7 +1279,7 @@ footer {
     </div>
   </div>
   <div class="footer-bawah">
-    © 2026 <strong>Granostic</strong> · PKIGC — Portal Kebijakan Internal Granostic Center · Dikelola oleh HRGA-IT Department · Hanya untuk penggunaan internal
+    © 2026 <strong>Granostic</strong> · PKIGC — Portal Kebijakan Internal Granostic Center · Dikelola oleh HRGA&IT Department · Hanya untuk penggunaan internal
   </div>
 </footer>
 
@@ -1881,7 +1881,7 @@ async function lakukan_login() {
   }
 
   if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'GANTI_DENGAN_URL_APPS_SCRIPT_ANDA') {
-    tampil_pesan_login('Sistem login belum dikonfigurasi. Hubungi HRGA-IT.', 'error');
+    tampil_pesan_login('Sistem login belum dikonfigurasi. Hubungi Admin Portal.', 'error');
     return;
   }
 
