@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-<title>PKIGC — Portal Kebijakan Internal Granostic Center</title>
+<title>PKGC — Portal Kebijakan Granostic Center</title>
 <style>
 /* ── RESET & BASE ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -132,7 +132,12 @@ nav.nav-utama {
   padding: 0 20px;
   display: flex;
   gap: 0;
+  overflow-x: auto;
+  white-space: nowrap;
 }
+nav.nav-utama::-webkit-scrollbar { height: 4px; }
+nav.nav-utama::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+
 .nav-item {
   padding: 11px 18px;
   font-size: 12.5px;
@@ -141,7 +146,6 @@ nav.nav-utama {
   cursor: pointer;
   border-bottom: 3px solid transparent;
   transition: all .15s;
-  white-space: nowrap;
   letter-spacing: 0.2px;
 }
 .nav-item:hover { color: white; background: rgba(255,255,255,0.07); }
@@ -334,11 +338,14 @@ nav.nav-utama {
   letter-spacing: 0.4px;
   white-space: nowrap;
 }
-.badge-jenis.SK  { background: #dbeafe; color: #1e40af; }
-.badge-jenis.SOP { background: #f3e8ff; color: #6b21a8; }
-.badge-jenis.SE  { background: #fef9c3; color: #854d0e; }
-.badge-jenis.PKB { background: #dcfce7; color: #166534; }
-.badge-jenis.POL { background: #ffe4e6; color: #9f1239; }
+
+.badge-jenis[class*="Surat"]      { background: #dbeafe; color: #1e40af; }
+.badge-jenis[class*="Pedoman"]    { background: #f3e8ff; color: #6b21a8; }
+.badge-jenis[class*="Prosedur"]   { background: #ffe4e6; color: #9f1239; }
+.badge-jenis[class*="Memo"]       { background: #fef9c3; color: #854d0e; }
+.badge-jenis[class*="Legalitas"]  { background: #dcfce7; color: #166534; }
+.badge-jenis[class*="Perjanjian"] { background: #e0f2fe; color: #0369a1; }
+.badge-jenis[class*="Lain-lain"]  { background: #f3f4f6; color: #374151; }
 
 .kartu-nomor-teks { font-size: 12px; color: var(--abu); font-weight: 600; }
 
@@ -911,7 +918,7 @@ footer {
   background: var(--putih);
   border-radius: 10px;
   width: 100%;
-  max-width: 380px;
+  max-width: 400px; /* Diperlebar sedikit dari 380px agar list Visi Misi lega */
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
@@ -934,6 +941,44 @@ footer {
   font-size: 11.5px;
   margin-top: 4px;
 }
+/* Style Baru untuk Visi Misi */
+.login-visimisi {
+  margin-top: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+.login-visimisi-judul {
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 3px;
+  display: inline-block;
+}
+.login-visimisi-teks {
+  margin-bottom: 10px;
+}
+.login-visimisi-teks:last-child {
+  margin-bottom: 0;
+}
+.login-visimisi ol {
+  margin: 0;
+  padding-left: 18px;
+}
+.login-visimisi li {
+  margin-bottom: 4px;
+  padding-left: 2px;
+}
+
 .login-badan { padding: 26px 28px 28px; }
 .login-grup { margin-bottom: 16px; }
 .login-label {
@@ -999,8 +1044,26 @@ footer {
   <div class="kotak-login">
     <div class="login-kepala">
       <img id="loginLogo" src="https://lh3.googleusercontent.com/d/1Bo0fEb-lIgrCfHMjO8G6a4rd0L9rn5CC" alt="Granostic">
-      <h1>Portal Kebijakan Internal</h1>
-      <p>Akses khusus karyawan berwenang (BoD / Manager / Spv)</p>
+      <h1>Portal Kebijakan</h1>
+      <p>Akses khusus karyawan berwenang<br>(Supervisor dan Manager)</p>
+      
+      <!-- Penambahan Elemen Visi Misi -->
+      <div class="login-visimisi">
+        <div class="login-visimisi-judul">Visi</div>
+        <div class="login-visimisi-teks">Menjadi nilai tambah dan pembeda dalam pelayanan laboratorium terbaik di Indonesia.</div>
+        
+        <div class="login-visimisi-judul">Misi</div>
+        <div class="login-visimisi-teks" style="margin-bottom: 0;">
+          <ol>
+            <li>Memberikan pelayanan yang profesional, hasil pemeriksaan yang akurat dan terpercaya, dan didukung oleh perkembangan kemajuan ilmu pengetahuan dan teknologi.</li>
+            <li>Digitalisasi layanan dengan menggunakan digital platform.</li>
+            <li>Mengembangkan jaringan kerjasama dan produk-produk terbaru.</li>
+            <li>Menjadi pusat pelayanan dan diagnosa nyeri yang modern dan terkini.</li>
+          </ol>
+        </div>
+      </div>
+      <!-- /Penambahan Elemen Visi Misi -->
+
     </div>
     <div class="login-badan">
       <div class="login-pesan" id="loginPesan"></div>
@@ -1014,7 +1077,7 @@ footer {
       </div>
       <button class="tombol-login" id="tombolLogin" onclick="lakukan_login()">Masuk</button>
       <div class="login-footer">
-        Lupa password? Hubungi HRGA&IT Department (ext. 301)<br>
+        Lupa password? Hubungi Admin Portal (ext. 301)<br>
         untuk permintaan reset akses.
       </div>
     </div>
@@ -1024,8 +1087,8 @@ footer {
 <div id="appKonten">
 <!-- STRIP ATAS -->
 <div class="strip-atas">
-  <span>🏢 Granostic &nbsp;|&nbsp; Portal Kebijakan Internal Granostic Center</span>
-  <span>⚙️ Dikelola: HRGA&IT Department &nbsp;|&nbsp; Kontak: ext. 301</span>
+  <span>🏢 Granostic &nbsp;|&nbsp; Portal Kebijakan Granostic Center</span>
+  <span>⚙️ Dikelola: HRGA&amp;IT Department &nbsp;|&nbsp; Kontak: ext. 301</span>
 </div>
 
 <!-- HEADER -->
@@ -1036,7 +1099,7 @@ footer {
   <div class="header-divider"></div>
   <div>
     <div class="nama-perusahaan">Granostic</div>
-    <div class="nama-dept">HRGA&IT Department</div>
+    <div class="nama-dept">HRGA&amp;IT Department</div>
   </div>
   <div class="search-header">
     <input type="text" id="inputCari" placeholder="Cari nomor, judul, atau kata kunci..." oninput="lakukan_cari(this.value)" />
@@ -1047,11 +1110,14 @@ footer {
 <!-- NAV -->
 <nav class="nav-utama">
   <div class="nav-item aktif" onclick="ganti_nav(this,'semua')">Beranda</div>
-  <div class="nav-item" onclick="ganti_nav(this,'SK')">Surat Keputusan Direksi</div>
-  <div class="nav-item" onclick="ganti_nav(this,'SOP')">Standar Prosedur Operasional</div>
-  <div class="nav-item" onclick="ganti_nav(this,'SE')">Memo Internal</div>
-  <div class="nav-item" onclick="ganti_nav(this,'PKB')">Perjanjian Kerja Sama</div>
-  <div class="nav-item" onclick="ganti_nav(this,'POL')">Kebijakan</div>
+  <!-- Parameter pada ganti_nav(...) sekarang diatur SAMA PERSIS dengan database -->
+  <div class="nav-item" onclick="ganti_nav(this,'Surat Keputusan')">Surat Keputusan</div>
+  <div class="nav-item" onclick="ganti_nav(this,'Pedoman')">Pedoman</div>
+  <div class="nav-item" onclick="ganti_nav(this,'Prosedur')">Prosedur</div>
+  <div class="nav-item" onclick="ganti_nav(this,'Memo Internal')">Memo Internal</div>
+  <div class="nav-item" onclick="ganti_nav(this,'Legalitas')">Legalitas</div>
+  <div class="nav-item" onclick="ganti_nav(this,'Perjanjian Kerja Sama')">Perjanjian Kerja Sama</div>
+  <div class="nav-item" onclick="ganti_nav(this,'Lain-lain')">Lain-lain</div>
 </nav>
 
 <!-- BANNER KONFIGURASI — hanya muncul jika URL Sheets belum diisi -->
@@ -1083,13 +1149,13 @@ footer {
             <div class="form-label">Departemen Penerbit</div>
             <select class="form-select" id="filterDept" onchange="terapkan_filter()">
               <option value="">— Semua Departemen —</option>
-              <option value="HRD">HRGA&IT</option>
-              <option value="Finance &amp; Accounting">Finacc</option>
+              <option value="HRGA&amp;IT">HRGA&amp;IT</option>
+              <option value="Finacc">Finacc</option>
               <option value="Clinic">Clinic</option>
               <option value="Laboratory">Laboratory</option>
-              <option value="Sales &amp; Marketing">Marketing</option>
-	      <option value="Tim &amp; Mutu">Tim Mutu</option>
-              <option value="Board of Director">Direksi</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Tim Mutu">Tim Mutu</option>
+              <option value="Direksi">Direksi</option>
             </select>
           </div>
           <div class="form-grup">
@@ -1241,19 +1307,19 @@ footer {
 <footer>
   <div class="footer-atas">
     <div class="footer-kolom">
-      <div class="footer-kolom-judul">Tentang PKIGC</div>
+      <div class="footer-kolom-judul">Tentang PKGC</div>
       <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,0.6);">
-        PKIGC adalah portal kebijakan internal Granostic Center untuk mendistribusikan peraturan, SOP, dan kebijakan perusahaan kepada seluruh karyawan secara terpusat.
+        PKGC adalah portal kebijakan internal Granostic Center untuk mendistribusikan peraturan, SOP, dan kebijakan perusahaan kepada seluruh karyawan secara terpusat.
       </p>
     </div>
     <div class="footer-kolom">
       <div class="footer-kolom-judul">Navigasi</div>
       <ul>
         <li><a href="#">Semua Peraturan</a></li>
-        <li><a href="#">Surat Keputusan Direksi</a></li>
-        <li><a href="#">Standar Prosedur Operasional</a></li>
+        <li><a href="#">Surat Keputusan</a></li>
+        <li><a href="#">Pedoman</a></li>
         <li><a href="#">Memo Internal</a></li>
-        <li><a href="#">Perjanjian Kerja Sama</a></li>
+        <li><a href="#">Legalitas</a></li>
       </ul>
     </div>
     <div class="footer-kolom">
@@ -1261,7 +1327,7 @@ footer {
       <ul>
         <li><a href="#">Google Drive Perusahaan</a></li>
         <li><a href="#">Sistem HR Internal</a></li>
-        <li><a href="#">Email HRGA&IT Dept.</a></li>
+        <li><a href="#">Email HRGA&amp;IT Dept.</a></li>
         <li><a href="#">Panduan Penggunaan</a></li>
       </ul>
     </div>
@@ -1275,7 +1341,7 @@ footer {
     </div>
   </div>
   <div class="footer-bawah">
-    © 2026 <strong>Granostic</strong> · PKIGC — Portal Kebijakan Internal Granostic Center · Dikelola oleh HRGA&IT Department · Hanya untuk penggunaan internal
+    © 2026 <strong>Granostic</strong> · PKGC — Portal Kebijakan Granostic Center · Dikelola oleh HRGA&amp;IT Department · Hanya untuk penggunaan internal
   </div>
 </footer>
 
@@ -1288,7 +1354,7 @@ footer {
         <div class="pdf-modal-ikon">📄</div>
         <div>
           <div class="pdf-modal-nama" id="pdfModalNama">Dokumen.pdf</div>
-          <div class="pdf-modal-sub">Granostic · Portal Kebijakan Internal Granostic Center</div>
+          <div class="pdf-modal-sub">Granostic · Portal Kebijakan Granostic Center</div>
         </div>
       </div>
       <div class="pdf-modal-aksi">
@@ -1378,7 +1444,7 @@ function parse_csv(teks) {
     return hasil;
   }
 
-  const header = pecah_baris(baris[0]); // PERBAIKAN: b[0] diubah ke baris[0] agar terbaca oleh JavaScript
+  const header = pecah_baris(baris[0]);
 
   return baris.slice(1)
     .filter(b => b.trim())
@@ -1410,7 +1476,8 @@ async function muat_data() {
   tampil_loading();
 
   try {
-    const res = await fetch(SHEET_CSV_URL);
+    const targetUrl = SHEET_CSV_URL.replace("http://", "https://");
+    const res = await fetch(targetUrl);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const teks = await res.text();
     const hasil = parse_csv(teks);
@@ -1425,7 +1492,7 @@ async function muat_data() {
        <strong>Kemungkinan penyebab:</strong><br>
        • URL CSV belum diisi atau salah<br>
        • Google Sheets belum di-publish (File → Publish to web)<br>
-       • Koneksi internet terputus<br><br>
+       • Masalah privasi / pemblokiran koneksi HTTPS browser<br><br>
        <em>Menampilkan data contoh sebagai gantinya...</em>`
     );
     setTimeout(() => {
@@ -1437,61 +1504,61 @@ async function muat_data() {
 }
 
 const DATA_CONTOH = [
-  { id:1, nomor:"SK/HRD/001/2026", jenis:"SK", dept:"HRD",
+  { id:1, nomor:"SK/HRD/001/2026", jenis:"Surat Keputusan", dept:"HRGA&IT",
     judul:"Kebijakan Kerja Hybrid dan Work From Home Tahun 2026",
     abstrak:"Keputusan ini mengatur tata cara pelaksanaan kerja hybrid bagi seluruh karyawan. Kebijakan mencakup persentase minimum kehadiran di kantor (3 hari per minggu), persyaratan infrastruktur WFH, protokol komunikasi dan rapat virtual, mekanisme absensi digital melalui sistem HRIS, serta evaluasi kinerja jarak jauh yang terukur dan transparan berdasarkan KPI yang ditetapkan.",
     tanggal:"2026-03-15", berlaku_sejak:"1 April 2026", ditetapkan_oleh:"Direktur Utama",
     halaman:"12 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Ketenagakerjaan","Kebijakan Kerja","SDM"], dicabut:null, mencabut:null },
-  { id:2, nomor:"SOP/HRD/002/2026", jenis:"SOP", dept:"HRD",
+  { id:2, nomor:"SOP/HRD/002/2026", jenis:"Prosedur", dept:"HRGA&IT",
     judul:"Prosedur Rekrutmen dan Seleksi Karyawan Baru",
     abstrak:"Standar operasional prosedur pelaksanaan rekrutmen internal dan eksternal secara menyeluruh. Mengatur tahapan mulai dari perencanaan kebutuhan SDM, posting lowongan, seleksi berkas administrasi, tes psikologi, wawancara HRD dan user, medical check-up, negosiasi gaji, penerbitan surat penerimaan, hingga program orientasi dan onboarding karyawan baru selama 30 hari pertama.",
     tanggal:"2026-02-01", berlaku_sejak:"1 Februari 2026", ditetapkan_oleh:"Manajer HRD",
     halaman:"24 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Rekrutmen","SDM","Prosedur"], dicabut:null, mencabut:"SOP/HRD/001/2023" },
-  { id:3, nomor:"SK/KEU/001/2026", jenis:"SK", dept:"Keuangan",
+  { id:3, nomor:"SK/KEU/001/2026", jenis:"Surat Keputusan", dept:"Finacc",
     judul:"Kebijakan Pengeluaran dan Prosedur Reimburse Biaya Operasional",
     abstrak:"Mengatur batas maksimal pengeluaran operasional berdasarkan level jabatan, prosedur pengajuan dan persetujuan reimburse, penggunaan petty cash, batas nilai pengeluaran yang memerlukan approval direktur, format laporan biaya bulanan, serta sanksi atas penyalahgunaan anggaran operasional.",
     tanggal:"2026-01-10", berlaku_sejak:"1 Januari 2026", ditetapkan_oleh:"Direktur Keuangan",
     halaman:"16 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Keuangan","Anggaran","Kebijakan"], dicabut:null, mencabut:"SK/KEU/002/2024" },
-  { id:4, nomor:"SE/DIR/001/2026", jenis:"SE", dept:"Direksi",
+  { id:4, nomor:"SE/DIR/001/2026", jenis:"Memo Internal", dept:"Direksi",
     judul:"Surat Edaran: Tata Kelola Penggunaan Aset dan Fasilitas Perusahaan",
     abstrak:"Edaran resmi dari Direksi yang mengatur penggunaan seluruh aset perusahaan termasuk kendaraan dinas, perangkat IT, properti dan ruang kantor, serta fasilitas lainnya. Mengatur tanggung jawab pengguna, prosedur peminjaman, perawatan berkala, dan sanksi atas kerusakan atau penyalahgunaan aset.",
     tanggal:"2026-04-05", berlaku_sejak:"5 April 2026", ditetapkan_oleh:"Direktur Utama",
     halaman:"8 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Aset Perusahaan","Fasilitas","Tata Kelola"], dicabut:null, mencabut:null },
-  { id:5, nomor:"SOP/TI/001/2025", jenis:"SOP", dept:"Teknologi Informasi",
+  { id:5, nomor:"SOP/TI/001/2025", jenis:"Prosedur", dept:"HRGA&IT",
     judul:"Prosedur Keamanan Informasi dan Keamanan Siber Perusahaan",
     abstrak:"SOP pengelolaan keamanan data and infrastruktur IT perusahaan yang mencakup kebijakan password, penggunaan VPN, manajemen hak akses berdasarkan role, penanganan insiden siber, prosedur backup data, serta program pelatihan keamanan informasi tahunan untuk seluruh karyawan.",
     tanggal:"2025-11-20", berlaku_sejak:"1 Desember 2025", ditetapkan_oleh:"Manajer Teknologi Informasi",
     halaman:"32 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Keamanan Siber","IT","Prosedur"], dicabut:null, mencabut:null },
-  { id:6, nomor:"PKB/001/2024", jenis:"PKB", dept:"HRD",
+  { id:6, nomor:"PKB/001/2024", jenis:"Perjanjian Kerja Sama", dept:"HRGA&IT",
     judul:"Perjanjian Kerja Bersama Granostic Periode 2024–2026",
     abstrak:"Dokumen PKB yang disepakati antara Direksi dan perwakilan Serikat Pekerja, mengatur hak dan kewajiban karyawan, skema kompensasi, jenis cuti, penggantian biaya kesehatan, prosedur penilaian kinerja, mekanisme promosi, tata cara penyelesaian perselisihan industrial, dan ketentuan pemutusan hubungan kerja.",
     tanggal:"2024-01-01", berlaku_sejak:"1 Januari 2024", ditetapkan_oleh:"Direktur Utama & Ketua Serikat Pekerja",
     halaman:"64 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Hubungan Industrial","Ketenagakerjaan","Kompensasi"], dicabut:null, mencabut:"PKB/001/2021" },
-  { id:7, nomor:"SK/HRD/003/2025", jenis:"SK", dept:"HRD",
+  { id:7, nomor:"SK/HRD/003/2025", jenis:"Surat Keputusan", dept:"HRGA&IT",
     judul:"Struktur Kompensasi, Tunjangan, and Benefit Karyawan Tahun 2026",
     abstrak:"Rancangan keputusan tentang skala gaji berdasarkan grade jabatan, komponen tunjangan, benefit kesehatan keluarga, asuransi jiwa, bonus kinerja tahunan berdasarkan skor KPI, dan benefit non-tunai lainnya. Dokumen masih dalam proses review dan persetujuan Direksi.",
     tanggal:"2025-12-01", berlaku_sejak:"Menunggu pengesahan Direksi", ditetapkan_oleh:"Manajer HRD (Draft)",
     halaman:"20 hlm", status:"Dalam Review", pdf_url:"#",
     tags:["Kompensasi","Benefit","SDM"], dicabut:null, mencabut:null },
-  { id:8, nomor:"SK/KEU/002/2024", jenis:"SK", dept:"Keuangan",
+  { id:8, nomor:"SK/KEU/002/2024", jenis:"Surat Keputusan", dept:"Finacc",
     judul:"Kebijakan Pengeluaran Biaya Operasional (Revisi 2024) — Tidak Berlaku",
     abstrak:"Dokumen kebijakan pengeluaran operasional yang telah dicabut dan digantikan oleh SK/KEU/001/2026. Dimuat sebagai arsip historis untuk keperluan audit dan referensi.",
     tanggal:"2024-06-15", berlaku_sejak:"1 Juli 2024", ditetapkan_oleh:"Direktur Keuangan",
     halaman:"14 hlm", status:"Tidak Berlaku", pdf_url:"#",
     tags:["Keuangan","Arsip"], dicabut:"SK/KEU/001/2026", mencabut:null },
-  { id:9, nomor:"SE/HRD/002/2025", jenis:"SE", dept:"HRD",
+  { id:9, nomor:"SE/HRD/002/2025", jenis:"Memo Internal", dept:"HRGA&IT",
     judul:"Surat Edaran Kalender Kerja dan Cuti Bersama Tahun 2026",
     abstrak:"Surat edaran resmi yang memuat kalender kerja efektif, jadwal cuti bersama, daftar hari libur nasional, ketentuan hari kerja pengganti, dan tata cara pengajuan cuti tahunan melalui sistem HRIS untuk seluruh karyawan tahun 2026.",
     tanggal:"2025-12-15", berlaku_sejak:"1 Januari 2026", ditetapkan_oleh:"Manajer HRD",
     halaman:"4 hlm", status:"Berlaku", pdf_url:"#",
     tags:["Cuti","Kalender Kerja","SDM"], dicabut:null, mencabut:null },
-  { id:10, nomor:"POL/HRD/001/2026", jenis:"POL", dept:"HRD",
+  { id:10, nomor:"POL/HRD/001/2026", jenis:"Pedoman", dept:"HRGA&IT",
     judul:"Kebijakan Anti-Diskriminasi dan Kesetaraan di Tempat Kerja",
     abstrak:"Kebijakan yang menegaskan komitmen perusahaan terhadap lingkungan kerja yang adil and bebas diskriminasi. Mencakup larangan segala bentuk diskriminasi, prosedur pelaporan via whistleblowing, mekanisme investigasi internal yang rahasia, sanksi bagi pelanggar, dan program edukasi budaya inklusif.",
     tanggal:"2026-06-01", berlaku_sejak:"1 Juni 2026", ditetapkan_oleh:"Direktur Utama",
@@ -1507,7 +1574,9 @@ function hl(teks, q) {
 }
 
 function tgl_format(s) {
-  return new Date(s).toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
+  const d = new Date(s);
+  if (isNaN(d.getTime())) return s; 
+  return d.toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
 }
 
 function badge_status(st) {
@@ -1527,7 +1596,7 @@ function data_terfilter() {
     if (filterJenis    && r.jenis !== filterJenis)           return false;
     if (filterKategori && r.jenis !== filterKategori)        return false;
     if (dept   && r.dept !== dept)                           return false;
-    if (tahun  && !r.tanggal.startsWith(tahun))              return false;
+    if (tahun  && !r.tanggal.includes(tahun))                return false;
     if (status && r.status !== status)                       return false;
     if (q && q.length >= 2) {
       const cocok = r.judul.toLowerCase().includes(q)
@@ -1830,34 +1899,18 @@ function buka_pdf_tab_baru() {
 }
 
 function unduh_pdf() {
-  if (!dataAktif) return;
-  const unduhUrl = url_unduh_drive(dataAktif.pdf_url);
-  if (unduhUrl) {
-    const a = document.createElement('a');
-    a.href = unduhUrl;
-    a.download = document.getElementById('dPdfNama').textContent || 'dokumen.pdf';
-    a.target = '_blank';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  } else {
-    alert('URL PDF belum dikonfigurasi di Google Sheets.');
-  }
+  alert('Mohon maaf, fitur download dokumen telah dinonaktifkan.');
 }
 
 function ambil_pdf(url, nomor) {
-  const previewUrl = url_preview_drive(url);
-  if (previewUrl) window.open(previewUrl, '_blank');
-  else alert(`Ganti "pdf_url" untuk ${nomor} dengan link Google Drive.`);
+  alert('Mohon maaf, fitur download dokumen telah dinonaktifkan.');
 }
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') tutup_pdf_modal();
 });
 
-/* ══════════════════════════════════════════════════════════
-   LOGIN — Google Apps Script sebagai penjaga pintu
-══════════════════════════════════════════════════════════ */
+/* ── LOGIN ── */
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwySAZPy9fJiICx7xB9MlhSNRF8BViFVE1RU3keZK6sD77UCOikDQ0QcZlni4Jci6ja/exec";
 
 function tampil_pesan_login(teks, jenis) {
