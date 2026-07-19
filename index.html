@@ -898,7 +898,7 @@ footer {
   .detail-kepala-meta { grid-template-columns: 1fr 1fr; }
   .meta-sel:nth-child(2n) { border-right: none; }
   .meta-sel:nth-child(odd) { border-right: 1px solid var(--border); }
-  .login-visimisi-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .login-visimisi-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -908,10 +908,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background:
-    radial-gradient(circle at 12% 12%, rgba(0,166,147,0.28), transparent 45%),
-    radial-gradient(circle at 88% 90%, rgba(47,111,237,0.22), transparent 45%),
-    linear-gradient(135deg, var(--biru-tua) 0%, #060912 100%);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -921,9 +918,9 @@ footer {
   background: var(--putih);
   border-radius: 10px;
   width: 100%;
-  max-width: 650px; /* Diperlebar agar Visi Misi bisa sejajar dan tidak terlalu tinggi */
+  max-width: 680px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
 .login-kepala {
   background: var(--merah);
@@ -945,7 +942,7 @@ footer {
   margin-top: 4px;
 }
 
-/* Style Visi Misi Bersebelahan */
+/* --- VISI MISI STYLES --- */
 .login-visimisi-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -974,13 +971,11 @@ footer {
 .login-vm-kolom li { margin-bottom: 6px; padding-left: 2px; }
 .login-vm-kolom li:last-child { margin-bottom: 0; }
 
-/* Pembatasan lebar form agar input tidak ikut melar */
 .login-badan { padding: 26px 28px 28px; max-width: 420px; margin: 0 auto; }
 .login-grup { margin-bottom: 16px; }
 .login-label {
   font-size: 11px; font-weight: 700; color: var(--abu);
   text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; display: block;
-  text-align: left;
 }
 .login-input {
   width: 100%;
@@ -1044,7 +1039,7 @@ footer {
       <h1>Portal Kebijakan</h1>
       <p>Akses khusus karyawan berwenang<br>(Supervisor dan Manager)</p>
       
-      <!-- Penambahan Elemen Visi Misi Model Grid/Bersebelahan -->
+      <!-- Penambahan Elemen Visi Misi -->
       <div class="login-visimisi-grid">
         <div class="login-vm-kolom">
           <div class="login-vm-judul">Visi</div>
@@ -1339,10 +1334,7 @@ footer {
     </div>
   </div>
   <div class="footer-bawah">
-    border-top: 1px solid rgba(255,255,255,0.15);
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 11px;
+    © 2026 <strong>Granostic</strong> · PKGC — Portal Kebijakan Granostic Center · Dikelola oleh HRGA&amp;IT Department · Hanya untuk penggunaan internal
   </div>
 </footer>
 
